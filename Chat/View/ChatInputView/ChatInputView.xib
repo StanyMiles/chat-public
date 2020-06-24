@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ChatInputView" customModule="Chat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="xnW-93-IaB">
+                    <rect key="frame" x="4" y="4" width="406" height="40"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O8z-KM-Rvw">
+                            <rect key="frame" x="0.0" y="0.0" width="362" height="40"/>
+                            <color key="tintColor" name="darkish"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYe-xA-7sa">
+                            <rect key="frame" x="366" y="0.0" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="KYe-xA-7sa" secondAttribute="height" multiplier="1:1" id="P4m-FP-2Fb"/>
+                            </constraints>
+                            <color key="tintColor" name="almostPurple"/>
+                            <state key="normal" image="paperplane.fill" catalog="system"/>
+                            <connections>
+                                <action selector="handleSendMessage:" destination="iN0-l3-epB" eventType="touchUpInside" id="EHq-jn-e0r"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" name="whitish"/>
+            <constraints>
+                <constraint firstItem="xnW-93-IaB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="RhZ-gi-Oia"/>
+                <constraint firstAttribute="trailing" secondItem="xnW-93-IaB" secondAttribute="trailing" constant="4" id="bzK-ce-6vz"/>
+                <constraint firstItem="xnW-93-IaB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="dse-7n-hX3"/>
+                <constraint firstAttribute="bottom" secondItem="xnW-93-IaB" secondAttribute="bottom" constant="4" id="f7G-u1-Wdn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bottomConstraint" destination="f7G-u1-Wdn" id="Yaa-c3-jA3"/>
+                <outlet property="textField" destination="O8z-KM-Rvw" id="8WF-0b-lX6"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="paperplane.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="almostPurple">
+            <color red="0.51764705882352946" green="0.396078431372549" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkish">
+            <color red="0.25882352941176473" green="0.24313725490196078" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whitish">
+            <color red="0.97647058823529409" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
